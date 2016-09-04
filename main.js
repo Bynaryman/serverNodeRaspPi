@@ -3,7 +3,8 @@ var http = require('http');
 var server = http.createServer(function(req, res) {
 
   res.writeHead(200);
-
+  //res.writeHead({title: 'some test'});
+	console.log(req.headers['user-agent']);
   res.end('Salut tout le monde !');
 
 });
@@ -16,4 +17,4 @@ server.on('close', function() { // On écoute l'évènement close
 
 server.listen(8080); // Démarre le serveur
 
-server.close(); // Arrête le serveur. Déclenche l'évènement close
+//server.close(); // Arrête le serveur. Déclenche l'évènement close
